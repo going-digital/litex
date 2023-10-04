@@ -184,7 +184,7 @@ class GW1NPLL(LiteXModule):
             r_freq = out_freq / th_div     # real frequency
             diff_f = abs(r_freq - freq)    # diff between obtained and requested
             # check if value fit criterion
-            if diff_f > r_freq*margin:
+            if diff_f > freq*margin:
                 raise ValueError(f"Can't obtain requested frequency {diff_f} > {r_freq * margin}")
             if th_div == 1: # no divisor: may be CLKOUT or CLKOUTP
                 if phase == 0:
